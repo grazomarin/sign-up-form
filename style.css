@@ -1,15 +1,16 @@
 @font-face {
     font-family: 'proxima-nova';
-    src: url(../fonts/proxima_nova_font-webfont.woff2) format('woff2'), 
-        url(../fonts/proxima_nova_font-webfont.woff) format('woff');
+    src: url(../fonts/proxima_nova_font-webfont.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-
+}
+@font-face {
     font-family: 'circular';
     src: url(fonts/CircularWoff/CircularStd-Black.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
 
 * {
     box-sizing: border-box;
@@ -23,50 +24,66 @@ body {
     margin: 0;
 }
 
+.fake_body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
 
 .master {
-    position: absolute;
-    top: 25%;
-    left: 20%;
     background-color: white;
-    width: 60%;
-    height: 55%;
+    width: 65%;
+    height: 60%;
     box-shadow: 0px 0px 20px black;
+    border-radius: 15px;
 }
 
 .background {
     position: absolute;
     z-index: -1;
     background-color: #1aeab5;
-    width: 38%;
+    width: 40.3%;
     height: 100vh;
 }
 
 .company {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     background-color: #1aeab5;
     position: relative;
     height: 100%;
-    width: 30%;
+    width: 35%;
+    border-radius: 15px 0 0 15px;
+}
+
+.company img {
+    margin: 3%;
+    width: clamp(30px, 34%, 180px);
+    height: auto;
+}
+
+.company > div {
+    margin-bottom: 15%;
+    color:  white;
+    border-radius: 15px;
+}
+
+.company div * {
     font-family: 'circular';
+    font-size: clamp(9ch, 6vw, 20ch);
+    width: 20vw;
+    margin: -5px;
 }
 
-.logo {
-    width: 90px;
-    height: 100px;
-}
-
-.company * {
-    position: relative;
-    top: 40%;
-    font-size: 4vw;
-    color: white;
-}
-
-.company div:last-child {
-    font-size: 1.7vw;
-    width: 13vw;
+.company div div:last-child {
+    font-family: 'proxima-nova';
+    font-weight: 800;
+    font-size: clamp(3ch, 1.9vw, 6ch);
+    margin-top: -20px;
 }
