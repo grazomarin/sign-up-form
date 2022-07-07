@@ -1,6 +1,12 @@
 @font-face {
-    font-family: 'Tundra';
-    src: url(), format('woff2') url(), format('woff');
+    font-family: 'proxima-nova';
+    src: url(../fonts/proxima_nova_font-webfont.woff2) format('woff2'), 
+        url(../fonts/proxima_nova_font-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'circular';
+    src: url(fonts/CircularWoff/CircularStd-Black.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -45,23 +51,22 @@ body {
     position: relative;
     height: 100%;
     width: 30%;
+    font-family: 'circular';
 }
 
+.logo {
+    width: 90px;
+    height: 100px;
+}
 
 .company * {
     position: relative;
     top: 40%;
-    font-size: 4em;
+    font-size: 4vw;
     color: white;
 }
 
-.company div:nth-child(1) {
-    padding: 1px;
-    margin: 5px;
-}
-
-.company div:nth-child(2) {
-    font-size: 1.5em;
-    padding: 1px;
-    width: 100%;
+.company div:last-child {
+    font-size: 1.7vw;
+    width: 13vw;
 }
