@@ -34,20 +34,14 @@ body {
 
 
 .master {
+    display: flex;
     background-color: white;
-    width: 65%;
+    width: 67%;
     height: 60%;
     box-shadow: 0px 0px 20px black;
     border-radius: 15px;
 }
 
-.background {
-    position: absolute;
-    z-index: -1;
-    background-color: #1aeab5;
-    width: 40.3%;
-    height: 100vh;
-}
 
 .company {
     display: flex;
@@ -58,8 +52,16 @@ body {
     background-color: #1aeab5;
     position: relative;
     height: 100%;
-    width: 35%;
+    width: 34%;
     border-radius: 15px 0 0 15px;
+}
+
+.fake_background {
+    position: absolute;
+    z-index: -1;
+    background-color: #1aeab5;
+    width: 39.5%;
+    height: 100vh;
 }
 
 .company img {
@@ -68,15 +70,15 @@ body {
     height: auto;
 }
 
-.company > div {
-    margin-bottom: 15%;
+.company div div {
+    margin-bottom: 4%;
     color:  white;
     border-radius: 15px;
 }
 
 .company div * {
     font-family: 'circular';
-    font-size: clamp(9ch, 6vw, 20ch);
+    font-size: clamp(8ch, 6vw, 20ch);
     width: 20vw;
     margin: -5px;
 }
@@ -87,3 +89,38 @@ body {
     font-size: clamp(3ch, 1.9vw, 6ch);
     margin-top: -20px;
 }
+
+.content {
+    font-family: 'proxima-nova';
+    margin: min(40px, 6%);
+    width: 36.4vw;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 auto;
+    height: 300px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: max(30px, 11%);
+}
+
+form > div {
+    width: clamp(215px, 14vw, 400px);
+}
+
+form div div {
+    flex: 0 0 auto;
+    height: 100px;
+    width: clamp(200px, 30vw, 300px);
+}
+
+
+label, input { 
+    display: block;
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
+    margin: 5%;
+}
+
