@@ -36,8 +36,8 @@ body {
 .master {
     display: flex;
     background-color: white;
-    width: 67%;
-    height: 60%;
+    width: clamp(600px, 45%, 1400px);
+    height: auto;
     box-shadow: 0px 0px 20px black;
     border-radius: 15px;
 }
@@ -45,14 +45,14 @@ body {
 
 .company {
     display: flex;
+    flex: 0 0 auto;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: #1aeab5;
     position: relative;
-    height: 100%;
-    width: 34%;
+    height: auto;
     border-radius: 15px 0 0 15px;
 }
 
@@ -60,67 +60,145 @@ body {
     position: absolute;
     z-index: -1;
     background-color: #1aeab5;
-    width: 39.5%;
     height: 100vh;
 }
 
 .company img {
-    margin: 3%;
     width: clamp(30px, 34%, 180px);
     height: auto;
 }
 
-.company div div {
-    margin-bottom: 4%;
+.company > div {
+    margin: 25px 25px 25px 25px;
+}
+
+.company div div div {
+    margin-bottom: min(2px, 4%);
     color:  white;
     border-radius: 15px;
 }
 
-.company div * {
+.company div div * {
     font-family: 'circular';
-    font-size: clamp(8ch, 6vw, 20ch);
-    width: 20vw;
-    margin: -5px;
+    font-size: clamp(8ch, 6vw, 18ch);
+    margin-top: -20px;
 }
 
-.company div div:last-child {
+.company div div div:last-child {
     font-family: 'proxima-nova';
     font-weight: 800;
-    font-size: clamp(3ch, 1.9vw, 6ch);
-    margin-top: -20px;
+    font-size: clamp(2ch, 1.9vw, 6ch);
 }
 
 .content {
     font-family: 'proxima-nova';
-    margin: min(40px, 6%);
-    width: 36.4vw;
+    margin: max(15px, 4%) min(50px, 7%);
+    height: auto;
 }
 
 form {
     display: flex;
     flex-flow: row wrap;
     flex: 0 0 auto;
-    height: 300px;
-    width: 100%;
+    height: auto;
+    width: auto;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: max(30px, 11%);
 }
 
 form > div {
-    width: clamp(215px, 14vw, 400px);
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 auto;
+    width: 100%;
 }
 
-form div div {
+form > div div {
     flex: 0 0 auto;
-    height: 100px;
-    width: clamp(200px, 30vw, 300px);
+    width: clamp(100px, 30vw, 300px);
+}
+
+form > div div:first-child {
+    margin: 0 clamp(10px, 2vw, 380px) 1% 0;
 }
 
 
 label, input { 
     display: block;
-    font-size: clamp(1.2rem, 1vw, 1.5rem);
-    margin: 5%;
+    font-size: max(1.1rem, 0.67vw);
+    margin: 8px 14px 8px 14px;
+    width: auto;
 }
 
+h1 {
+    font-size: max(2rem, 2vw);
+}
+
+button {
+    --webkit-appearance:none;
+    appearance: none;
+	border: solid black 1px;
+    border-radius: 16px;
+	padding: 0;
+	font: inherit;
+    color: black;
+	cursor: pointer;
+	outline: inherit;
+    width: clamp(130px, 9vw, 180px);
+    height: clamp(30px, 2.5vw, 40px);
+    margin: 20px 10px 10px 10px;
+    background-color: #1aeab5;
+    transition: all .4s ease-in-out;
+}
+button:hover {
+    cursor: pointer;
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+a {
+    text-decoration: none;
+    color: #1aeab5;
+}
+
+a:visited {
+    color: #1A4FEA;
+}
+
+a:hover {
+    color: #EA1A4F;
+}
+
+p {
+    font-size: max(1rem, 1.2vh);
+}
+
+input {
+    border: solid 2px rgba(0, 0, 0, 0.505);
+    border-radius: 12px;
+    padding: 2px 6px;
+    outline: none;
+}
+
+input:invalid {
+    border-color: rgba(255, 0, 0, 0.48);
+}
+
+input:invalid:focus {
+    border:3px solid rgba(255, 0, 0, 0.7);
+}
+
+.required label::after {
+    content: ' *';
+    color: black;
+    font-size: max(1.25rem, 0.65vw);
+}
+
+input:focus {
+    border: #108f6f 3px solid;
+}
