@@ -14,7 +14,7 @@
         <div class="master">
             <div class="company">
                 <div>
-                    <img src="../logo.svg" >
+                    <img src="logo.svg" sanitize=true>
                     <div>
                         <div>Gecko</div>
                         <div>guaranteed privacy</div>
@@ -39,7 +39,7 @@
                     <div>
                         <div class="required">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" pattern=".*@.*\..*" required>
+                            <input type="email" name="email" id="email" pattern=".*@.*\..*">
                         </div>
 
                         <div>
@@ -51,12 +51,13 @@
                     <div>
                         <div class="required">
                             <label for="passwd">Password</label>
-                            <input type="password" name="passwd" id="passwd" pattern=".{8,}" textContent="hello" title='The password must contain one upper case letter, one number and one sign' required>
+                            <input type="password" name="passwd" id="passwd" pattern="(?=.*\W+)(?!.*[ ])(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+).{8,32}" title='The password must contain one upper case letter, one number and one sign' required>
                         </div>
 
-                        <div class="required">
+                        <div class="required relative">
                             <label for="conf_passwd">Confirm Password</label>
-                            <input type="password" name="conf_passwd" id="conf_passwd" pattern=".{8,}" required>
+                            <input type="password" name="conf_passwd" id="conf_passwd" pattern="(?=.*\W+)(?!.*[ ])(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+).{8,32}" required>
+                            <div class="notmatching">* Passwords do not match</div>
                         </div>
                     </div>
                     <button type="submit">Create Account</button>
