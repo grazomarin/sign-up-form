@@ -36,7 +36,7 @@ body {
 .master {
     display: flex;
     background-color: white;
-    width: clamp(650px, 60vw, 1400px);
+    width: clamp(700px, 60vw, 1400px);
     height: auto;
     box-shadow: 0px 0px 20px black;
     border-radius: 15px;
@@ -87,7 +87,7 @@ body {
 .company div div div:last-child {
     font-family: 'proxima-nova';
     font-weight: 800;
-    font-size: clamp(2ch, 1.9vw, 6ch);
+    font-size: clamp(2ch, 1.9vw, 5ch);
 }
 
 .content {
@@ -125,13 +125,13 @@ form > div div:first-child {
 
 label, input { 
     display: block;
-    font-size: max(1.1rem, 0.67vw);
+    font-size: max(1rem, 120%);
     margin: 8px 14px 8px 14px;
     width: auto;
 }
 
 h1 {
-    font-size: max(2rem, 1.8vw);
+    font-size: 3rem;
 }
 
 button {
